@@ -40,17 +40,17 @@ public class GuesserController {
     String randomSong = sg.getSong();
     Media song = new Media("src/main/resources/guesser/songs/" + randomSong + ".mp3");
 
-    public void playSong(){
+    public void playSong() {
         MediaPlayer mediaPlayer = new MediaPlayer(song);
         songPlayer = new MediaView(mediaPlayer);
         songPlayer.getMediaPlayer().play();
     }
 
-    public void pauseSong(){
+    public void pauseSong() {
         songPlayer.getMediaPlayer().pause();
     }
 
-    public void resetSong(){
+    public void resetSong() {
         songPlayer.getMediaPlayer().seek(Duration.seconds(0.0));
     }
 
@@ -76,9 +76,9 @@ public class GuesserController {
         stage.show();
     }
 
-    public void onEnterSong(){
+    public void onEnterSong() {
         String guess = txtSongGuess.getText();
-        if(guess.equalsIgnoreCase(randomSong)){
+        if (guess.equalsIgnoreCase(randomSong)) {
             lblSongResult.setFont(Font.font("Avenir Book"));
             lblSongResult.setTextFill(Color.GREEN);
             lblSongResult.setText("Congratulations! You guessed the song!");

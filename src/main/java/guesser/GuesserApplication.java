@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import textNumber.TextNumberApplication;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class GuesserApplication extends Application {
 
@@ -16,9 +17,10 @@ public class GuesserApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(GuesserApplication.class.getResource("songGuesser-view.fxml"));
+        URL url = getClass().getClassLoader().getResource("src/main/resources/guesser/songGuesser-view.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader(url);
         Scene scene = new Scene(fxmlLoader.load(), 450, 550);
-        primaryStage.setTitle("Guessing Games!");
+        primaryStage.setTitle("Guess the Song!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
