@@ -7,7 +7,6 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guesser.GuesserController">
    <children>
       <Label alignment="CENTER" layoutX="43.0" layoutY="17.0" prefHeight="80.0" prefWidth="200.0" text="Guess the Song!" textAlignment="CENTER">
@@ -28,9 +27,18 @@
          </font>
       </Button>
       <MediaView fx:id="songPlayer" fitHeight="200.0" fitWidth="200.0" layoutX="100.0" layoutY="175.0" />
-      <Button layoutX="81.0" layoutY="383.0" mnemonicParsing="false" onAction="#playSong" prefHeight="26.0" prefWidth="60.0" text="Play" />
-      <Button layoutX="159.0" layoutY="383.0" mnemonicParsing="false" onAction="#pauseSong" prefHeight="26.0" prefWidth="60.0" text="Pause" />
-      <Button layoutX="235.0" layoutY="383.0" mnemonicParsing="false" onAction="#resetSong" prefHeight="26.0" prefWidth="60.0" text="Reset" />
+      <Button layoutX="81.0" layoutY="383.0" mnemonicParsing="false" onAction="#playSong" prefHeight="26.0" prefWidth="60.0" text="Play">
+         <font>
+            <Font name="Avenir Book" size="10.0" />
+         </font></Button>
+      <Button layoutX="159.0" layoutY="383.0" mnemonicParsing="false" onAction="#pauseSong" prefHeight="26.0" prefWidth="60.0" text="Pause">
+         <font>
+            <Font name="Avenir Book" size="10.0" />
+         </font></Button>
+      <Button layoutX="235.0" layoutY="383.0" mnemonicParsing="false" onAction="#resetSong" prefHeight="26.0" prefWidth="80.0" text="Play from Start">
+         <font>
+            <Font name="Avenir Book" size="10.0" />
+         </font></Button>
       <Label fx:id="lblSongResult" alignment="CENTER" layoutX="100.0" layoutY="427.0" prefHeight="50.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
