@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -38,7 +37,8 @@ public class GuesserController {
     AnimalGuesser ag = new AnimalGuesser();
     SongGuesser sg = new SongGuesser();
     String randomSong = sg.getSong();
-    Media song = new Media("src/main/resources/guesser/songs/" + randomSong + ".mp3");
+    String songLocation = "/resources/guesser/songs/" + randomSong + ".mp3";
+    Media song = new Media(songLocation);
 
     public void playSong() {
         MediaPlayer mediaPlayer = new MediaPlayer(song);
@@ -78,7 +78,13 @@ public class GuesserController {
 
     public void onEnterSong() {
         String guess = txtSongGuess.getText();
-        if (guess.equalsIgnoreCase(randomSong)) {
+        String song = "";
+        for(int i = 0; i<guess.length(); i++){
+            if(guess.charAt(i) == ' '){
+                song += '-';
+            } else song+= guess.charAt(i);
+        }
+        if (song.equalsIgnoreCase(randomSong)) {
             lblSongResult.setFont(Font.font("Avenir Book"));
             lblSongResult.setTextFill(Color.GREEN);
             lblSongResult.setText("Congratulations! You guessed the song!");

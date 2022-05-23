@@ -17,7 +17,8 @@ public class GuesserApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL url = getClass().getClassLoader().getResource("src/main/resources/guesser/songGuesser-view.fxml");
+        URL url = GuesserApplication.class.getResource("songGuesser-view.fxml");
+        System.out.println(url);
         FXMLLoader fxmlLoader = new FXMLLoader(url);
         Scene scene = new Scene(fxmlLoader.load(), 450, 550);
         primaryStage.setTitle("Guess the Song!");
