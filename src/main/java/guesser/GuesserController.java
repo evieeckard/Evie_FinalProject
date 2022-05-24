@@ -32,7 +32,8 @@ public class GuesserController {
     private MediaView songPlayer;
 
     @FXML
-    private ImageView imgEmoji, imgAnimal, white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16;
+    private ImageView imgTest, imgAnimal;
+
 
     AnimalGuesser ag = new AnimalGuesser();
     SongGuesser sg = new SongGuesser();
@@ -42,31 +43,27 @@ public class GuesserController {
     String randomPicture = ag.getAnimal();
     String pictureLocation = "/resources/guesser/images" + randomPicture + ".png";
     Image image = new Image(new File(pictureLocation).toURI().toString());
-    Image white = new Image(new File("//Users/67143/IdeaProjects/JavaFX_Projects/src/main/resources/guesser/images/white.png").toURI().toString());
-    public ImageView[] hints = {white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16};
+    File whiteFile = new File("src/main/resources/guesser/images/cover.png");
+    Image whitePic = new Image(whiteFile.toURI().toString());
+    @FXML
+    private ImageView white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16;
+    private ImageView[] hints = {white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16};
 
-
-    public void setWhites() {
-        this.white1 = new ImageView(white);
-        this.white2 = new ImageView(white);
-        this.white3 = new ImageView(white);
-        this.white4 = new ImageView(white);
-        this.white5 = new ImageView(white);
-        this.white6 = new ImageView(white);
-        this.white7 = new ImageView(white);
-        this.white8 = new ImageView(white);
-        this.white9 = new ImageView(white);
-        this.white10 = new ImageView(white);
-        this.white11 = new ImageView(white);
-        this.white12 = new ImageView(white);
-        this.white13 = new ImageView(white);
-        this.white14 = new ImageView(white);
-        this.white15 = new ImageView(white);
-        this.white16 = new ImageView(white);
+    public GuesserController() {
+        imgTest = new ImageView();
+        imgAnimal = new ImageView();
+        imgTest.setImage(whitePic);
+        System.out.println(white1);
+        setWhitesVisible();
     }
 
-    public void setImgAnimal(){
-        this.imgAnimal = new ImageView(image);
+
+    public void setWhitesVisible() {
+        for(int i = 0; i<16; i++){
+            hints[i] = new ImageView();
+            hints[i].setImage(whitePic);
+            hints[i].setVisible(true);
+        }
     }
 
     public void playSong() {
@@ -80,7 +77,8 @@ public class GuesserController {
     }
 
     public void onAnimalGuessClick(ActionEvent event) throws IOException {
-        pauseSong();
+        if(songPlayer.getMediaPlayer() != null){
+        pauseSong();}
         Parent animalGuesser = FXMLLoader.load(getClass().getResource("animalGuesser-view.fxml"));
         Scene scene = new Scene(animalGuesser);
 
@@ -89,8 +87,9 @@ public class GuesserController {
         stage.setScene(scene);
         stage.show();
 
-        setImgAnimal();
-        setWhites();
+        imgAnimal.setImage(image);
+        imgAnimal.setVisible(true);
+        setWhitesVisible();
     }
 
     public void onSongGuessClick(ActionEvent event) throws IOException {
@@ -106,10 +105,10 @@ public class GuesserController {
     public void onEnterSong() {
         String guess = txtSongGuess.getText();
         String song = "";
-        for(int i = 0; i<guess.length(); i++){
-            if(guess.charAt(i) == ' '){
+        for (int i = 0; i < guess.length(); i++) {
+            if (guess.charAt(i) == ' ') {
                 song += '-';
-            } else song+= guess.charAt(i);
+            } else song += guess.charAt(i);
         }
         if (song.equalsIgnoreCase(randomSong)) {
             lblSongResult.setFont(Font.font("Avenir Book"));
@@ -122,28 +121,30 @@ public class GuesserController {
         }
     }
 
-    public void onGetHint(){
-        while(true){
-            int randomIndex = (int)(Math.random() * 16);
-            if(hints[randomIndex] != null){
+    public void onGetHint() {
+        boolean isTrue = true;
+        while (isTrue) {
+            int randomIndex = (int) (Math.random() * 16);
+            System.out.println(hints[randomIndex]);
+            if (hints[randomIndex].isVisible()) {
                 hints[randomIndex].setVisible(false);
-                hints[randomIndex] = null;
-                break;
+                isTrue = false;
             }
         }
     }
 
-    public void onEnterAnimal(){
+    public void onEnterAnimal() {
         String guess = txtAnimalGuess.getText();
-        if(guess.equalsIgnoreCase(randomPicture)){
+        if (guess.equalsIgnoreCase(randomPicture)) {
             lblAnimalResult.setFont(Font.font("Avenir Book"));
             lblAnimalResult.setTextFill(Color.GREEN);
             lblAnimalResult.setText("Congratulations! You guessed the animal!");
-        } else{
+        } else {
             lblAnimalResult.setFont(Font.font("Avenir Book"));
             lblAnimalResult.setTextFill(Color.ORANGE);
             lblAnimalResult.setText("Wrong Answer! Try Again >:)");
         }
     }
+
 
 }

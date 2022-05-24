@@ -5,7 +5,7 @@ public class SongGuesser {
     private String[] songs = {"Kiss-Me-More", "Faded", "Shape-Of-You", "Happy", "Bad-Guy", "One-Kiss", "Somebody-That-I-Used-To-Know", "Sugar", "Bulletproof", "Raining-Tacos"};
 
     public String getSong() {
-        int index = (int) ((Math.random() * ((songs.length - 1) + 1)));
+        int index = (int) (Math.random() * songs.length);
         return songs[index];
     }
 

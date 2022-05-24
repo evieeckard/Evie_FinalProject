@@ -137,5 +137,6 @@
          </children>
       </GridPane>
       <Label fx:id="lblAnimalResult" alignment="CENTER" layoutX="25.0" layoutY="423.0" prefHeight="50.0" prefWidth="350.0" />
+      <ImageView fx:id="imgTest" fitHeight="150.0" fitWidth="200.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
