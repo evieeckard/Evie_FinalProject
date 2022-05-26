@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class GuesserController {
 
@@ -32,7 +33,7 @@ public class GuesserController {
     private MediaView songPlayer;
 
     @FXML
-    private ImageView imgTest, imgAnimal;
+    private ImageView imgAnimal = new ImageView();
 
 
     AnimalGuesser ag = new AnimalGuesser();
@@ -40,60 +41,80 @@ public class GuesserController {
     String randomSong = sg.getSong();
     String songLocation = "/Users/67143/IdeaProjects/JavaFX_Projects/src/main/resources/guesser/songs/" + randomSong + ".mp4";
     Media song = new Media(new File(songLocation).toURI().toString());
-    String randomPicture = ag.getAnimal();
-    String pictureLocation = "/resources/guesser/images" + randomPicture + ".png";
-    Image image = new Image(new File(pictureLocation).toURI().toString());
-    File whiteFile = new File("src/main/resources/guesser/images/cover.png");
-    Image whitePic = new Image(whiteFile.toURI().toString());
+    File animal = new File(ag.getAnimalFile().getCanonicalPath());
+    String animalName = animal.getCanonicalPath().substring(76, animal.getCanonicalPath().length() - 4);
+    Image image = new Image(animal.toURI().toString());
+
     @FXML
-    private ImageView white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16;
-    private ImageView[] hints = {white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16};
+    private Label white1 = new Label();
+    @FXML
+    private Label white2 = new Label();
+    @FXML
+    private Label white3 = new Label();
+    @FXML
+    private Label white4 = new Label();
+    @FXML
+    private Label white5 = new Label();
+    @FXML
+    private Label white6 = new Label();
+    @FXML
+    private Label white7 = new Label();
+    @FXML
+    private Label white8 = new Label();
+    @FXML
+    private Label white9 = new Label();
+    @FXML
+    private Label white10 = new Label();
+    @FXML
+    private Label white11 = new Label();
+    @FXML
+    private Label white12 = new Label();
+    @FXML
+    private Label white13 = new Label();
+    @FXML
+    private Label white14 = new Label();
+    @FXML
+    private Label white15 = new Label();
+    @FXML
+    private Label white16 = new Label();
+    private Label[] hints = {white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16};
 
-    public GuesserController() {
-        imgTest = new ImageView();
-        imgAnimal = new ImageView();
-        imgTest.setImage(whitePic);
-        System.out.println(white1);
-        setWhitesVisible();
+    public GuesserController() throws IOException {
     }
 
-
-    public void setWhitesVisible() {
-        for(int i = 0; i<16; i++){
-            hints[i] = new ImageView();
-            hints[i].setImage(whitePic);
-            hints[i].setVisible(true);
-        }
+    public void setImgAnimal() {
+        imgAnimal.setImage(image);
     }
 
+    @FXML
     public void playSong() {
         MediaPlayer mediaPlayer = new MediaPlayer(song);
         songPlayer = new MediaView(mediaPlayer);
         mediaPlayer.play();
     }
 
+    @FXML
     public void pauseSong() {
         songPlayer.getMediaPlayer().pause();
     }
 
+    @FXML
     public void onAnimalGuessClick(ActionEvent event) throws IOException {
-        if(songPlayer.getMediaPlayer() != null){
-        pauseSong();}
-        Parent animalGuesser = FXMLLoader.load(getClass().getResource("animalGuesser-view.fxml"));
+        if (songPlayer.getMediaPlayer() != null) {
+            pauseSong();
+        }
+        Parent animalGuesser = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("animalGuesser-view.fxml")));
         Scene scene = new Scene(animalGuesser);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Guess the Animal!");
         stage.setScene(scene);
         stage.show();
-
-        imgAnimal.setImage(image);
-        imgAnimal.setVisible(true);
-        setWhitesVisible();
     }
 
+    @FXML
     public void onSongGuessClick(ActionEvent event) throws IOException {
-        Parent songGuesser = FXMLLoader.load(getClass().getResource("songGuesser-view.fxml"));
+        Parent songGuesser = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("songGuesser-view.fxml")));
         Scene scene = new Scene(songGuesser);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -102,6 +123,7 @@ public class GuesserController {
         stage.show();
     }
 
+    @FXML
     public void onEnterSong() {
         String guess = txtSongGuess.getText();
         String song = "";
@@ -121,21 +143,24 @@ public class GuesserController {
         }
     }
 
+    @FXML
     public void onGetHint() {
+        setImgAnimal();
         boolean isTrue = true;
         while (isTrue) {
             int randomIndex = (int) (Math.random() * 16);
-            System.out.println(hints[randomIndex]);
-            if (hints[randomIndex].isVisible()) {
-                hints[randomIndex].setVisible(false);
+            Label hint = hints[randomIndex];
+            if (!hint.isDisable()) {
+                hint.setDisable(true);
                 isTrue = false;
             }
         }
     }
 
+    @FXML
     public void onEnterAnimal() {
         String guess = txtAnimalGuess.getText();
-        if (guess.equalsIgnoreCase(randomPicture)) {
+        if (guess.equalsIgnoreCase(animalName)) {
             lblAnimalResult.setFont(Font.font("Avenir Book"));
             lblAnimalResult.setTextFill(Color.GREEN);
             lblAnimalResult.setText("Congratulations! You guessed the animal!");
@@ -148,3 +173,4 @@ public class GuesserController {
 
 
 }
+
