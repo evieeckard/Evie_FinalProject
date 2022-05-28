@@ -22,10 +22,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
-public class GuesserController<white1> {
+public class GuesserController {
 
     @FXML
-    private Text txtTest, white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16;
+    private Text white1, white2, white3, white4, white5, white6, white7, white8, white9, white10, white11, white12, white13, white14, white15, white16;
 
     @FXML
     private TextField txtSongGuess, txtAnimalGuess;
@@ -100,54 +100,22 @@ public class GuesserController<white1> {
     }
 
     private void searchWhite(String name, Text white1, Text white2, Text white3, Text white4, Text white5, Text white6, Text white7, Text white8, Text white9, Text white10, Text white11, Text white12, Text white13, Text white14, Text white15, Text white16) {
-        if (white1.getId().equals(name)) {
-            white1.setText(" ");
-        }
-        if (white2.getId().equals(name)) {
-            white2.setText(" ");
-        }
-        if (white3.getId().equals(name)) {
-            white3.setText(" ");
-        }
-        if (white4.getId().equals(name)) {
-            white4.setText(" ");
-        }
-        if (white5.getId().equals(name)) {
-            white5.setText(" ");
-        }
-        if(white6.getId().equals(name)){
-            white6.setText(" ");
-        }
-        if(white7.getId().equals(name)){
-            white7.setText(" ");
-        }
-        if(white8.getId().equals(name)){
-            white8.setText(" ");
-        }
-        if(white9.getId().equals(name)){
-            white9.setText(" ");
-        }
-        if(white10.getId().equals(name)){
-            white10.setText(" ");
-        }
-        if(white11.getId().equals(name)){
-            white11.setText(" ");
-        }
-        if(white12.getId().equals(name)){
-            white12.setText(" ");
-        }
-        if(white13.getId().equals(name)){
-            white13.setText(" ");
-        }
-        if(white14.getId().equals(name)){
-            white14.setText(" ");
-        }
-        if(white15.getId().equals(name)){
-            white15.setText(" ");
-        }
-        if(white16.getId().equals(name)){
-            white16.setText(" ");
-        }
+        if (white1.getId().equals(name)) {white1.setText(" ");}
+        if (white2.getId().equals(name)) {white2.setText(" ");}
+        if (white3.getId().equals(name)) {white3.setText(" ");}
+        if (white4.getId().equals(name)) {white4.setText(" ");}
+        if (white5.getId().equals(name)) {white5.setText(" ");}
+        if (white6.getId().equals(name)) {white6.setText(" ");}
+        if (white7.getId().equals(name)) {white7.setText(" ");}
+        if (white8.getId().equals(name)) {white8.setText(" ");}
+        if (white9.getId().equals(name)) {white9.setText(" ");}
+        if (white10.getId().equals(name)) {white10.setText(" ");}
+        if (white11.getId().equals(name)) {white11.setText(" ");}
+        if (white12.getId().equals(name)) {white12.setText(" ");}
+        if (white13.getId().equals(name)) {white13.setText(" ");}
+        if (white14.getId().equals(name)) {white14.setText(" ");}
+        if (white15.getId().equals(name)) {white15.setText(" ");}
+        if (white16.getId().equals(name)) {white16.setText(" ");}
     }
 
     @FXML
