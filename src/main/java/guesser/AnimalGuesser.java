@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class AnimalGuesser {
 
-    private String[] animals = {"Lion", "Dog", "Cat", "Deer", "Fox", "Parrot", "Lizard", "Snake", "Horse"};
+    private String[] animals = {"Lion", "Dog", "Cat", "Deer", "Fox", "Parrot", "Lizard", "Snake", "Horse", "Bear", "Giraffe", "Capybara", "Panda", "Zebra", "Fish"};
     private File[] animalFiles = new File[animals.length];
 
     public AnimalGuesser() {
@@ -18,23 +18,17 @@ public class AnimalGuesser {
         animalFiles[6] = new File("src/main/resources/guesser/images/Lizard.png");
         animalFiles[7] = new File("src/main/resources/guesser/images/Snake.png");
         animalFiles[8] = new File("src/main/resources/guesser/images/Horse.png");
+        animalFiles[9] = new File("src/main/resources/guesser/images/Bear.png");
+        animalFiles[10] = new File("src/main/resources/guesser/images/Giraffe.png");
+        animalFiles[11] = new File("src/main/resources/guesser/images/Capybara.png");
+        animalFiles[12] = new File("src/main/resources/guesser/images/Panda.png");
+        animalFiles[13] = new File("src/main/resources/guesser/images/Zebra.png");
+        animalFiles[14] = new File("src/main/resources/guesser/images/Fish.png");
 
 
-    }
-
-    public String getAnimal() {
-        int index = (int) (Math.random() * (animals.length));
-        return animals[index];
     }
 
     public File getAnimalFile() throws IOException {
-        String name = getAnimal();
-        File animal = animalFiles[0];
-        for(int i = 1; i<animalFiles.length; i++){
-            if(animalFiles[i].getName().substring(0, animalFiles.length-4).equalsIgnoreCase(name)){
-                animal = animalFiles[i];
-            } else return animalFiles[(int)(Math.random() * animalFiles.length)];
-        }
-        return animal;
+        return animalFiles[(int)(Math.random() * animalFiles.length)];
     }
 }

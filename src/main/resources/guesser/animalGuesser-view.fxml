@@ -9,11 +9,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guesser.GuesserController">
    <children>
-      <ImageView fx:id="imgAnimal" fitHeight="220.0" fitWidth="290.0" layoutX="55.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true" />
-      <GridPane layoutX="32.0" layoutY="171.0" prefHeight="220.0" prefWidth="290.0">
+      <ImageView fx:id="imgAnimal" fitHeight="220.0" fitWidth="200.0" layoutX="87.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true" />
+      <GridPane layoutX="64.0" layoutY="189.0" prefHeight="220.0" prefWidth="200.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,70 +28,86 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="white1" ellipsisString="" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true">
+            <Text fx:id="white1" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white2" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="1">
+               </font>
+            </Text>
+            <Text fx:id="white2" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="1">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white3" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="2">
+               </font>
+            </Text>
+            <Text fx:id="white3" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="2">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white4" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="3">
+               </font>
+            </Text>
+            <Text fx:id="white4" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="3">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white5" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.rowIndex="1">
+               </font>
+            </Text>
+            <Text fx:id="white5" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.rowIndex="1">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white6" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               </font>
+            </Text>
+            <Text fx:id="white6" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white7" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               </font>
+            </Text>
+            <Text fx:id="white7" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white8" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               </font>
+            </Text>
+            <Text fx:id="white8" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white9" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.rowIndex="2">
+               </font>
+            </Text>
+            <Text fx:id="white9" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.rowIndex="2">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white10" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               </font>
+            </Text>
+            <Text fx:id="white10" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white11" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               </font>
+            </Text>
+            <Text fx:id="white11" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white12" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               </font>
+            </Text>
+            <Text fx:id="white12" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white13" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.rowIndex="3">
+               </font>
+            </Text>
+            <Text fx:id="white13" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.rowIndex="3">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white14" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               </font>
+            </Text>
+            <Text fx:id="white14" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white15" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               </font>
+            </Text>
+            <Text fx:id="white15" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font size="175.0" />
-               </font></Label>
-            <Label fx:id="white16" prefHeight="56.0" prefWidth="72.0" text="◼️" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               </font>
+            </Text>
+            <Text fx:id="white16" fill="#857a7a" strokeType="OUTSIDE" strokeWidth="0.0" text="◼️" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="175.0" />
-               </font></Label>
+               </font>
+            </Text>
          </children>
       </GridPane>
       <Label alignment="CENTER" layoutX="40.0" layoutY="15.0" prefHeight="80.0" prefWidth="200.0" text="Guess the Animal!">
